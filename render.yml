@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: Ernest-1
+    env: node
+    region: oregon
+    buildCommand: yarn install
+    startCommand: node index.js
+    autoDeploy: true
+    plan: free
+    envVars:
+      - key: HANDLERS
+        value: ".,"
+      - key: ANTI_LINK
+        value: ""
+      - key: ANTILINK_ACTION
+        value: "false"
+      - key: RMBG_KEY
+        value: ""
+      - key: HEROKU_API_KEY
+        value: ""
+      - key: HEROKU_APP_NAME
+        value: ""
+      - key: LOGS
+        value: "true"
+      - key: MODE
+        value: "public"
+      - key: SUDO
+        value: "917025994178"
+      - key: SESSION_ID
+        value: ""
+databases:
+  - name: ernest-db
+    plan: free
