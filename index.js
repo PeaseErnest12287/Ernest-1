@@ -30,7 +30,7 @@ let plaintext = config.SESSION_ID.replaceAll("Asena~", "");
 let key = 'asena';
 let decryptedPlainText = aes256.decrypt(key, plaintext);
   async function md(){
-   let {body} = await got(`https://whatsAsenamd.onrender.com/api/session?id=${decryptedPlainText}`)
+   let {body} = await got(`https://rolav1.onrender.com/session?id=${decryptedPlainText}`)
   let result = JSON.parse(body).result[0].data;
 fs.writeFileSync("./lib/auth_info_baileys/creds.json" , result);
    }
