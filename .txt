@@ -1,0 +1,33 @@
+ernest-v3/
+├── src/
+│   ├── commands/
+│   │   ├── admin.js
+│   │   ├── ping.js
+│   │   ├── tagall.js
+│   │   └── ... (other commands)
+│   ├── core/
+│   │   ├── client.js
+│   │   └── handler.js
+│   └── utils/
+│       ├── logger.js
+│       └── formatter.js
+├── .env
+├── Dockerfile
+├── render.yaml
+├── package.json
+└── README.md
+export default {
+  name: 'command-name',  // Trigger word (!weather)
+  description: 'What the command does',
+  
+  // Required function
+  execute: async ({ client, message, args }) => {
+    // Your logic here
+    return { 
+      // Can return string or object:
+      title: 'Weather Report',
+      content: 'Sunny, 26°C',
+      footer: 'Powered by Ernest'
+    };
+  }
+};

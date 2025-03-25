@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: whatsapp-bot
+    runtime: node
+    buildCommand: npm install
+    startCommand: node src/core/client.js
+    envVars:
+      - key: SESSION_NAME
+        value: ernest-render
+    plan: free # Upgrade for 24/7 uptime
